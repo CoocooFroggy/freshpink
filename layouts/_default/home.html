@@ -7,7 +7,12 @@
 
   {{ range first 10 .Site.RegularPages }}
     <div class="post-title">
-      <a href="{{ .RelPermalink }}">- {{ .LinkTitle }} {{ if .Draft }} — DRAFT{{ end }}</a>
+      <a href="{{ .RelPermalink }}">
+        - {{ .LinkTitle }}
+        {{ if .Draft }}
+          <span class="draft-label">[DRAFT]</span>
+        {{ end }}
+      </a>
       <small>{{ .Date | time.Format "2006.01.02" }}</small>
     </div>
   {{ end }}
