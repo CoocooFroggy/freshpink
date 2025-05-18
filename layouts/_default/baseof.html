@@ -14,7 +14,7 @@
         });"></script>
   {{ partial "head.html" . }}
 </head>
-<body>
+<body {{ if .IsHome }} class="layout-home"{{ end }}>
     {{ partial "header.html" . }}
     {{ block "main" . }}{{ end }}
     {{ partial "footer.html" . }}
