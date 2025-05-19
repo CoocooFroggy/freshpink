@@ -25,6 +25,8 @@
     --quote-font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     --content-font-family: 'Pretendard', sans-serif;
     /* --content-font-family: "Fira Code", monospace; */
+
+    --header-height: 40px;
 }
 
 /* 2) Dark-mode overrides — applied *before first paint* */
@@ -40,6 +42,7 @@
 /* >>>>> ================ MAIN_CSS =============== <<<<< */
 html {
     scroll-behavior: smooth;
+    scroll-padding-top: var(--header-height);
 }
 
 .container {
@@ -57,7 +60,6 @@ body {
     letter-spacing: -0.3px;
     line-height: 1.8;
     background-color: var(--background-color);
-    padding: 20px 0;
     min-height: 100vh;      /* full viewport height */
     margin: 0 auto;
     word-break: keep-all;
@@ -65,6 +67,7 @@ body {
     display: flex;
     flex-direction: column;
     /*justify-content: center;*/
+    padding-top: calc(var(--header-height));
 }
 
 /* only on homepage */
@@ -73,7 +76,6 @@ body {
     flex-direction: column;
     min-height: 100vh;    /* full viewport height */
     margin: 0 auto;       /* keep your existing centering */
-    padding: 20px 0;
 }
 
 .layout-home .site-content {
@@ -113,6 +115,7 @@ div.post-title .draft-label {
 
 /* >>>>> ================ HEADER_CSS =============== <<<<< */
 .main-header {
+    height: var(--header-height);
     top: 0;
     left: 50%;
     transform: translateX(-50%);
